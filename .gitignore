@@ -16,3 +16,7 @@
 /tmp
 /config/secrets.yml
 tags
+.gemtags
+.tags
+.tags*
+
