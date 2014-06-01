@@ -19,5 +19,19 @@ module Rescueme
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.time_zone = "Paris"
+    config.i18n.default_locale = :fr
+    config.i18n.available_locales = [:fr, :en]
+    I18n.locale = :fr
+
+    # Enable escaping HTML in JSON.
+    config.active_support.escape_html_entities_in_json = true
+
+    config.action_view.field_error_proc = Proc.new do |html, instance|
+      new_html = html.sub(/^(<[^>]+\sclass=(['"]))(.*?)\2/, '\1\3 missing\2')
+      new_html.sub!(/^(<[^\s>]+)/, '\1 class="missing"') if new_html == html
+      new_html.html_safe
+    end
   end
 end

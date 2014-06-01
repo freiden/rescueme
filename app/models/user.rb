@@ -5,11 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
 
-# User model associations:
+  # User model associations:
   has_many :created_tickets, class_name: "Ticket", foreign_key: "user_id", :inverse_of => :user
   has_many :tickets, foreign_key: "assistant_id", :inverse_of => :assistant
 
-# User model validations:
-validates :first_name, :last_name, :email, presence: true
-validates :email, uniqueness: true
+  # User model validations:
+  validates :first_name, :last_name, :email, presence: true
+  validates :email, uniqueness: true
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 end

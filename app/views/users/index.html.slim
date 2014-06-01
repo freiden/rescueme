@@ -1,0 +1,14 @@
+h1 = t('.list')
+
+- if @users.present?
+  table
+    thead
+      tr
+        th = t('.full_name')
+        th = t('.email')
+    tbody
+      = content_tag_for :tr, @users do |user|
+        td = user.full_name
+        td = user.email
+
+p= link_to t('.create'), new_user_registration_path, target: '_blank'

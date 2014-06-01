@@ -19,12 +19,17 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+fr:
+  helpers:
+    submit:
+      user:
+        create: "Créer un utilisateur"
+        update: Modifier l'utilisateur
   users:
     index:
-      create: Add a new user
+      create: Ajouter un utilisateur
       email: E-mail
-      first_name: First name
-      full_name: Full name
-      last_name: Last name
-      list: List of users
+      first_name: Prénom
+      full_name: Nom complet
+      last_name: Nom
+      list: Liste des utilisateurs

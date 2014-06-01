@@ -54,16 +54,20 @@ gem 'foundation-rails'
 
 gem 'pry'
 gem 'pry-rails'
+gem "slim-rails"
+gem "simple_form"
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'awesome_print'
+  gem 'mailcatcher'
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'passenger'
+  gem 'rspec-rails', '~> 3.0.0.beta2'
   gem 'guard'
   gem 'spork-rails'
   gem 'guard-rspec'
