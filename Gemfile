@@ -45,7 +45,7 @@ gem 'bcrypt'#, '~> 3.1.2'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 
 
 ## Project gems
@@ -67,7 +67,7 @@ end
 
 group :development, :test do
   gem 'passenger'
-  gem 'rspec-rails', '~> 3.0.0.beta2'
+  gem 'rspec-rails', '~> 3.0.0.rc1'
   gem 'guard'
   gem 'spork-rails'
   gem 'guard-rspec'
